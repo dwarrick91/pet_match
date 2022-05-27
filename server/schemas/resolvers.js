@@ -62,20 +62,12 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
     removePet: async (parent, { userId, petId }) => {
-      return Thought.findOneAndUpdate(
+      return User.findOneAndUpdate(
         { _id: userId },
         { $pull: { pets: { _id: petId } } },
         { new: true }
       );
     },
-    // addPetToUser: async (parent, { user, pet }, context) => {
-    //   return await User.findOneAndUpdate(
-    //     { _id: user },
-    //     { 
-    //       $addToSet: { pets: pet } }, 
-    //     { new: true }
-    //   );
-    // }
   }
 };
 

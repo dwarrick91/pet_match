@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap-button-loader'
-import Footer from './footer';
 import '../styles/pet.css';
 
 import auth from '../utils/auth'
@@ -9,7 +8,6 @@ import auth from '../utils/auth'
 function Pet(props) {
     const [pets, setPets] = useState([])
     const [user, setUser] = useState(auth.getProfile())
-
 
     const classes = {
         svg: {
@@ -45,7 +43,7 @@ function Pet(props) {
     
     const getPets = e => {
         e.preventDefault()
-        axios.get('http://localhost:3001/api/token')
+        axios.get('/api/token')
              .then(res => {
                  setPets(res.data.animals)
              })
@@ -70,7 +68,7 @@ function Pet(props) {
                         </form>
 
                         <div style={classes.petsList}>
-                            {pets.map(pet => (
+                            {pets && pets.map(pet => (
                                 <div key={pet.id} style={classes.pet}>
                                     <div style={ classes.petTitle }>
                                         <h2>{ pet.name }</h2>
@@ -82,7 +80,6 @@ function Pet(props) {
                                             </Button>
                                         )}
                                     </div>
- 
                                     <div style={classes.petInfo}>
                                         <h5>{ pet.age } | { pet.gender } | { pet.size }</h5>
                                         {pet.photos.length > 0 && <img src={pet.photos[0].large} alt={pet.name} style={classes.petImage}/>}

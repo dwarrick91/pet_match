@@ -15,7 +15,7 @@ module.exports = {
       const response = await axios.get('https://api.petfinder.com/v2/animals?coat=short&size=large&gender=female', {
         headers: {"Authorization": `Bearer ${token}`}
       })
-      
+      console.log(process.env.APP_URL)
       res.status(200)
          .setHeader("Access-Control-Allow-Origin", process.env.APP_URL || '*')
          .setHeader("Access-Control-Allow-Credentials", true)

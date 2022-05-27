@@ -31,7 +31,6 @@ const PetMatchRoutes = () => {
 
   useEffect(() => {
     if (shouldRedirect) {
-      console.log('here')
       navigate('/profile')
     }
   }, [shouldRedirect, navigate])
@@ -65,7 +64,6 @@ const PetMatchRoutes = () => {
             petAdoptee: user.data._id
           }
       })
-      console.log(data)
       setPets(prevPets => ([
           ...prevPets,
           data.addPet
