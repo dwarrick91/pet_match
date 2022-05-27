@@ -15,12 +15,12 @@
 
 ## Installation
 
-- Go to GitHub Repo https://github.com/mcarson24/pet_match
-- Go to Heroku Deployed Url https://polar-castle-85308.herokuapp.com/
+- Go to GitHub Repo https://github.com/dwarrick91/pet_match
+- Go to Heroku Deployed Url https://pet-match-maker.herokuapp.com/
 
 ## Usage
 
-Go to Heroku Deployed Url https://polar-castle-85308.herokuapp.com/
+Go to Heroku Deployed Url https://pet-match-maker.herokuapp.com/
 
 - Click "Click here to sign up!"
 - Navigate to Pets in from Navbar
